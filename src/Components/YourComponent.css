@@ -1,0 +1,12 @@
+.card-wrapper {
+  transition: transform 0.3s ease; /* Enable transition animation on transform property */
+  margin: 40px; /* Add sufficient margin around the card */
+  opacity: 0.7;
+}
+
+.card-wrapper.active {
+  transform: scale(1.1); /* Scale up the size by 10% when active */
+  z-index: 2; /* Stack the active card on top of others */
+  opacity: 1;
+}
+

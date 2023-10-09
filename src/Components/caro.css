@@ -1,0 +1,30 @@
+@keyframes moveEnlarge {
+    0% {
+        transform: translateX(0%) scale(1);
+    }
+    100% {
+        transform: translateX(-100%) scale(1.2);
+    }
+}
+@keyframes moveSmall {
+    0% {
+        transform: translateX(0%) scale(1.2);
+    }
+    100% {
+        transform: translateX(-110%) scale(1);
+    }
+}
+
+.morph-card {
+    animation: moveEnlarge 3s infinite;
+}
+
+.small-card {
+    animation: moveSmall 3s infinite;
+}
+.hide-card-inner {
+    position: relative;
+    z-index: 1;
+   
+    animation: none;
+}

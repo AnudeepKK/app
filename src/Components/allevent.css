@@ -1,0 +1,118 @@
+.nav-link.category-button {
+    position: relative;
+    color: #fff;
+    transition: color 0.3s;
+}
+#caro{
+    z-index: 100;
+}
+
+.nav-link.category-button:hover {
+    color: crimson;
+    text-decoration: none;
+}
+
+.nav-link.category-button::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0; /* Change width to 0 initially */
+    height: 2px;
+    background-color: crimson;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out; /* Add width transition */
+}
+
+.nav-link.category-button:hover::before,
+.nav-link.category-button.active::before {
+    transform: scaleX(1);
+    width: 100%; /* Add width to make it animated */
+}
+
+.event-card {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* shadow effect */
+    border-radius: 5px; /* rounded corners */
+  }
+  
+  .event-card:hover {
+    transform: scale(1.1); /* zoom effect */
+    box-shadow: 0 0 10px rgba(17, 76, 201, 0.7); /* Orange glow effect */
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+}
+.sub-navbar {
+    position: relative;
+    z-index: 10;
+    background: rgba(0,0,0,0.5); /* A dark background with 60% opacity */
+    border-radius: 10px;
+}
+
+.right-container{
+    position: relative;
+    z-index: 10;
+    background: rgba(0,0,0,0.5); /* A dark background with 60% opacity */
+    border-radius: 10px;
+}
+
+.glow-border {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.7); /* Orange glow effect */
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  
+.heading-class {
+    position: relative;
+    z-index: 100;
+  }
+  .all-events-page{
+    margin: 0 0 0 0;
+  }
+  .search-bar{
+    position: relative;
+    z-index: 100;
+  }
+  /* Custom search bar styling */
+.custom-search {
+    max-width: 300px; /* Adjust the width as needed */
+    opacity: 0.7;
+}
+
+/* Custom input field styling */
+.custom-input {
+    border-radius: 25px; /* Rounded input field */
+    padding: 10px 15px; /* Adjust padding as needed */
+    border: 2px solid #ccc; /* Border color */
+    transition: border-color 0.2s ease-in-out;
+}
+
+.custom-input:focus {
+    border-color: #007bff; /* Border color when focused */
+    box-shadow: none; /* Remove box-shadow when focused */
+}
+
+/* Custom button styling */
+.custom-button {
+    border-radius: 25px; /* Rounded button */
+    padding: 10px 20px; /* Adjust padding as needed */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.custom-button:hover {
+    background-color: #007bff; /* Button background color on hover */
+    color: #fff; /* Button text color on hover */
+}
+
+/* Responsive styling for search bar */
+@media (max-width: 576px) {
+    .custom-search {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}

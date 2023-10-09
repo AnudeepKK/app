@@ -1,0 +1,43 @@
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
+import './YourComponent.css'; // Import your custom CSS 
+
+const EventCarousel = ({ events = [] }) => {
+
+  if (!events.length) return null;  // return null if events => undefined
+
+  return (
+    <Carousel 
+      autoPlay 
+      interval={3000} 
+      showThumbs={false} 
+      showStatus={false} 
+      infiniteLoop 
+      centerMode 
+      classNames={{
+        activeSlide: 'activeSlide'
+      }}
+      centerSlidePercentage={33}>
+
+      {events.map((event, i) => (
+        <div key={i} tabIndex={i+1} aria-label={`event-card-${i+1}`}>
+          <Card style={{ width: '18rem', margin: '0 1rem' }}>
+            <Card.Img variant="top" src={event.imageSrc} alt={event.tagline} aria-label={event.tagline} />
+            <Card.Body>
+              <Card.Title>{event.tagline}</Card.Title>
+              <Card.Text>
+                {`${event.date} at ${event.time}`}
+              </Card.Text>
+              <Button variant="primary">{event.buttonText}</Button>
+            </Card.Body>
+          </Card>
+        </div>
+      ))}
+    </Carousel>
+  );
+};
+export default EventCarousel;
